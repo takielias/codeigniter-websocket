@@ -3,7 +3,7 @@ CodeIgniter library realtime communication by using Websocket technology and Rat
 
 ## :books: Dependencies
 
-- PHP 5.+
+- PHP 5.6+
 - CodeIgniter Framework (3.1.* recommanded)
 - Composer
 - PHP sockets extension enabled
@@ -71,9 +71,9 @@ $config['token_timeout'] = 1;
 You can add the following lines direclty in your Controller file or your MY_Controller global file
 
 ```php
-        $this->load->add_package_path(FCPATH . 'vendor/takielias/codeigniter-websocket');
-        $this->load->library('Codeigniter_websocket');
-        $this->load->remove_package_path(FCPATH . 'vendor/takielias/codeigniter-websocket');
+$this->load->add_package_path(FCPATH . 'vendor/takielias/codeigniter-websocket');
+$this->load->library('Codeigniter_websocket');
+$this->load->remove_package_path(FCPATH . 'vendor/takielias/codeigniter-websocket');
 ```
 
 ### You'r almost done :heavy_check_mark:
@@ -256,17 +256,21 @@ If you see the message the message bellow,  you are done (don't close your cmd) 
 Open three pages of your project on following url with different IDs :
 `http://localhost/myproject/user/index/1`
 `http://localhost/myproject/user/index/2`
-`http://localhost/myproject/user/index/3`
 
 :heavy_exclamation_mark: In my example, **recipient_id** is defined by **user_id**, as you can see, it's the **auth callback** who defines recipient ids.
 
 If you have something like that, everything is ok for you:
 
-![User_1](https://user-images.githubusercontent.com/14097222/40725234-2d7ea6aa-6423-11e8-975e-4372125c889d.PNG)
+![user_1](https://user-images.githubusercontent.com/38932580/57090224-21851500-6d28-11e9-9321-20d02e146d62.png)
+
+
+![user_2](https://user-images.githubusercontent.com/38932580/57090269-44afc480-6d28-11e9-8ea1-30079a3a47e9.png)
+
 
 You can try is by typing and sending something in each page (see cmd for more logs).
 
-![Cmd_list.png](https://user-images.githubusercontent.com/14097222/40981966-819da07a-68dc-11e8-9717-b0135a107318.PNG)
+![cmd](https://user-images.githubusercontent.com/38932580/57090313-5abd8500-6d28-11e9-8644-8e0323a36a41.png)
+
 
 ## Broadcast messages with your php App :boom: !
 If you want to broadcast message with php script or something else you can use library like [textalk/websocket](https://github.com/Textalk/websocket-php) ***(who is included in my composer.json as required library)***
