@@ -1,7 +1,7 @@
 # CodeIgniter WebSocket Library
 CodeIgniter library realtime communication by using Websocket technology and Ratchet ([Socketo.me](http://socketo.me) & [ratchet_client](https://github.com/romainrg/ratchet_client))
 
-# If you Face any problem you may check CodeIgniter WebSocket Example https://github.com/takielias/codeigniter-websocket-example
+If you Face any problem you may check CodeIgniter WebSocket Example https://github.com/takielias/codeigniter-websocket-example
 
 ## :books: Dependencies
 
