@@ -283,23 +283,30 @@ class Server implements MessageComponentInterface
 
                     // Call user personnal callback
                     $auth = call_user_func_array($this->CI->codeigniter_websocket->callback['auth'],
-                        array($datas, $client));
+                        array($datas));
 
                     // Verify authentication
-                    if (empty($auth) or $auth['status'] != 1) {
+
+                    if (empty($auth) or !is_integer($auth)) {
                         output('error', 'Client (' . $client->resourceId . ') authentication failure');
                         $client->send(json_encode(array("type" => "error", "msg" => 'Invalid ID or Password.')));
                         // Closing client connexion with error code "CLOSE_ABNORMAL"
                         $client->close(1006);
-                    } else {
-
-                        $client->send(json_encode(array("type" => "error", "msg" => $auth['msg'])));
                     }
 
                     // Add UID to associative array of subscribers
                     $client->subscriber_id = $auth;
 
-                    $client->username = $datas->user_id;
+                    if ($this->CI->codeigniter_websocket->auth) {
+                        $data = json_encode(array("type" => "token", "token" => AUTHORIZATION::generateToken($client->resourceId)));
+                        $this->send_message($client, $data, $client);
+                    }
+
+                    // Output
+                    if ($this->CI->codeigniter_websocket->debug) {
+                        output('success', 'Client (' . $client->resourceId . ') authentication success');
+                        output('success', 'Token : ' . AUTHORIZATION::generateToken($client->resourceId));
+                    }
                 }
 
             }
@@ -345,7 +352,6 @@ class Server implements MessageComponentInterface
 
             }
 
-
             if (!empty($datas->type) && $datas->type == 'roomchat') {
 
                 if (valid_jwt($datas->token) != false) {
@@ -372,29 +378,49 @@ class Server implements MessageComponentInterface
             // 2 - Message is an array and have destination (broadcast to single user)
             // 3 - Message is an array and don't have specified destination (broadcast to everybody except us)
             // 4 - Message is an array and we wan't to broadcast to ourselves too (broadcast to everybody)
-            if (!empty($message)) {
 
-                // We look arround all clients
-                foreach ($this->clients as $user) {
+            if (!empty($datas->type) && $datas->type == 'chat') {
 
-                    // Broadcast to single user
-                    if (!empty($datas->recipient_id)) {
-                        if ($user->subscriber_id == $datas->recipient_id) {
-                            $this->send_message($user, $message, $client);
-                            break;
-                        }
-                    } else {
-                        // Broadcast to everybody
-                        if ($broadcast) {
-                            $this->send_message($user, $message, $client);
-                        } else {
-                            // Broadcast to everybody except us
-                            if ($client !== $user) {
-                                $this->send_message($user, $message, $client);
+                $pass = true;
+
+                if ($this->CI->codeigniter_websocket->auth) {
+
+                    if (!valid_jwt($datas->token)) {
+                        output('error', 'Client (' . $client->resourceId . ') authentication failure. Invalid Token');
+                        $client->send(json_encode(array("type" => "error", "msg" => 'Invalid Token.')));
+                        // Closing client connexion with error code "CLOSE_ABNORMAL"
+                        $client->close(1006);
+                        $pass = false;
+                    }
+                }
+
+                if ($pass) {
+                    if (!empty($message)) {
+
+                        // We look arround all clients
+                        foreach ($this->clients as $user) {
+
+                            // Broadcast to single user
+                            if (!empty($datas->recipient_id)) {
+                                if ($user->subscriber_id == $datas->recipient_id) {
+                                    $this->send_message($user, $message, $client);
+                                    break;
+                                }
+                            } else {
+                                // Broadcast to everybody
+                                if ($broadcast) {
+                                    $this->send_message($user, $message, $client);
+                                } else {
+                                    // Broadcast to everybody except us
+                                    if ($client !== $user) {
+                                        $this->send_message($user, $message, $client);
+                                    }
+                                }
                             }
                         }
                     }
                 }
+
             }
 
         } else {
