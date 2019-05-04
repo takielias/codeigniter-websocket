@@ -256,8 +256,8 @@ If you see the message the message bellow,  you are done (don't close your cmd) 
 ![First_launch.png](https://user-images.githubusercontent.com/14097222/40981263-d568413a-68da-11e8-9ab2-7b3f7224526e.PNG)
 #### :arrow_right: Test the App
 Open three pages of your project on following url with different IDs :
-`http://localhost/myproject/user/index/1`
-`http://localhost/myproject/user/index/2`
+`http://localhost/myproject/index.php/user/index/1`
+`http://localhost/myproject/index.php/user/index/2`
 
 :heavy_exclamation_mark: In my example, **recipient_id** is defined by **user_id**, as you can see, it's the **auth callback** who defines recipient ids.
 
