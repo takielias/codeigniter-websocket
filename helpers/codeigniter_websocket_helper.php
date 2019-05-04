@@ -1,4 +1,10 @@
 <?php
+/**
+ * Author: takielias
+ * Github Repo : https://github.com/takielias/codeigniter-websocket
+ * Date: 04/05/2019
+ * Time: 09:04 PM
+ */
 defined('BASEPATH') or exit('No direct script access allowed');
 
 /**
