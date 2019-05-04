@@ -36,7 +36,7 @@ Here app_path defines your default Codeigniter Application directory Name
 
 **WOW You made it !!!** :heavy_check_mark: 
 
-Open three pages of your project on following url with different IDs :
+Open two pages of your project on following url with different IDs :
 
 `http://localhost/your project directory/index.php/user/index/1`
 
