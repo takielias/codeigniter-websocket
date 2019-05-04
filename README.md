@@ -22,9 +22,9 @@ Don't forget to include your autoload to CI config file :
 ```php
 $config['composer_autoload'] = FCPATH.'vendor/autoload.php';
 ```
-### :arrow_right: Step 2 : One command Installation
+### :arrow_right: Step 2 : One command Setup
 
-If you want one click installation just Execute the Command in the Project directory
+If you want Single command installation just Execute the Command in the Project directory
 
 **N.B:** It will make 2 new controllers  Welcome.php and User.php
 ```sh
