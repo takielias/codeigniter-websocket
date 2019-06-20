@@ -115,3 +115,8 @@ class Welcome extends CI_Controller
 
 ## Bugs :bug: or feature :muscle:
 Be free to open an issue or send pull request
+
+## Support on Beerpay
+Hey dude! Help me out for a couple of :beers:!
+
+[![Beerpay](https://beerpay.io/takielias/codeigniter-websocket/badge.svg?style=beer-square)](https://beerpay.io/takielias/codeigniter-websocket)  [![Beerpay](https://beerpay.io/takielias/codeigniter-websocket/make-wish.svg?style=flat-square)](https://beerpay.io/takielias/codeigniter-websocket?focus=wish)
