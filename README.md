@@ -1,5 +1,8 @@
+[![Latest Version on Packagist][ico-version]][link-packagist]
+[![Total Downloads][ico-downloads]][link-downloads]
+
 # CodeIgniter WebSocket Library
-CodeIgniter library realtime communication by using Websocket technology and Ratchet ([Socketo.me](http://socketo.me) & [ratchet_client](https://github.com/romainrg/ratchet_client))
+CodeIgniter WebSocket library. It allows you to make powerfull realtime applications by using Ratchet ([Socketo.me](http://socketo.me) & [ratchet_client](https://github.com/romainrg/ratchet_client)) Websocket technology.
 
 If you Face any problem you may check CodeIgniter WebSocket Example https://github.com/takielias/codeigniter-websocket-example
 
@@ -120,3 +123,10 @@ Be free to open an issue or send pull request
 Hey dude! Help me out for a couple of :beers:!
 
 [![Beerpay](https://beerpay.io/takielias/codeigniter-websocket/badge.svg?style=beer-square)](https://beerpay.io/takielias/codeigniter-websocket)  [![Beerpay](https://beerpay.io/takielias/codeigniter-websocket/make-wish.svg?style=flat-square)](https://beerpay.io/takielias/codeigniter-websocket?focus=wish)
+
+[ico-version]: https://img.shields.io/packagist/v/takielias/codeigniter-websocket.svg?style=flat-square
+[ico-downloads]: https://img.shields.io/packagist/dt/takielias/codeigniter-websocket.svg?style=flat-square
+
+[link-packagist]: https://packagist.org/packages/takielias/codeigniter-websocket
+[link-downloads]: https://packagist.org/packages/takielias/codeigniter-websocket
+[link-author]: https://github.com/takielias
