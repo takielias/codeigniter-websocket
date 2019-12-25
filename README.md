@@ -4,6 +4,8 @@
 # CodeIgniter WebSocket Library
 CodeIgniter WebSocket library. It allows you to make powerfull realtime applications by using Ratchet ([Socketo.me](http://socketo.me) & [ratchet_client](https://github.com/romainrg/ratchet_client)) Websocket technology.
 
+## WebSocket Library for Codeigniter 4.x https://github.com/takielias/codeigniter4-websocket
+
 If you Face any problem you may check CodeIgniter WebSocket Example https://github.com/takielias/codeigniter-websocket-example
 
 ## :books: Dependencies
