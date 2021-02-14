@@ -1,33 +1,34 @@
 {
-    "name": "takielias/codeigniter-websocket",
-    "keywords": [
-        "php7",
-        "php-library",
-		"codeigniter websocket",
-        "codeigniter",
-        "websocket",
-        "realtime",
-		"Ratchet"
-    ],
-    "description": "CodeIgniter Websocket using Ratchet Websocket technology. Inspired by https://github.com/romainrg/ratchet_client",
-    "homepage": "https://github.com/takielias/codeigniter-websocket",
-    "license": "MIT",
-    "type": "library",
-    "authors": [{
-        "name": "Taki Elias",
-        "email": "taki.elias@gmail.com",
-        "homepage": "https://ebuz.xyz",
-        "role": "Software Engineer"
-    }],
-    "require": {
-        "php": ">=5.4.0",
-        "cboden/ratchet": "^0.4.1",
-        "textalk/websocket": "^1.2"
-    },
-    "extra": {
-        "installer-name": "codeigniter-websocket"
-    },
-    "support": {
-        "email": "taki.elias@gmail.com"
+  "name": "takielias/codeigniter-websocket",
+  "keywords": [
+    "php7",
+    "php-library",
+    "codeigniter websocket",
+    "codeigniter",
+    "websocket",
+    "realtime",
+    "Ratchet"
+  ],
+  "description": "CodeIgniter Websocket using Ratchet Websocket technology. Inspired by https://github.com/romainrg/ratchet_client",
+  "homepage": "https://github.com/takielias/codeigniter-websocket",
+  "license": "MIT",
+  "type": "library",
+  "authors": [
+    {
+      "name": "Taki Elias",
+      "email": "taki.elias@gmail.com",
+      "homepage": "https://ebuz.xyz"
     }
+  ],
+  "require": {
+    "php": ">=5.4.0",
+    "cboden/ratchet": "^0.4.1",
+    "textalk/websocket": "^1.2"
+  },
+  "extra": {
+    "installer-name": "codeigniter-websocket"
+  },
+  "support": {
+    "email": "taki.elias@gmail.com"
+  }
 }
