@@ -131,28 +131,29 @@ class Codeigniter_websocket
 	public function run()
 	{
 		// Initiliaze all the necessary class
-		$server = IoServer::factory(
-			new HttpServer(
-				new WsServer(
-					new Server()
-				)
-			),
-			$this->port,
-			$this->host
+
+		// wss://
+		// https://github.com/ratchetphp/Ratchet/issues/489#issuecomment-457714221
+		// https://forums.phpfreaks.com/topic/309486-websockets-will-not-work-over-tlsssl/?do=findComment&comment=1571386
+		$app = new \Ratchet\Http\HttpServer(
+			new \Ratchet\WebSocket\WsServer(
+				new Server()
+			)
 		);
+		
+		$loop = \React\EventLoop\Factory::create();
+		
+		$secure_websockets = new \React\Socket\Server($this->host . ':' . $this->port, $loop);
+		$secure_websockets = new \React\Socket\SecureServer($secure_websockets, $loop, [
+			'local_cert' => '/path/to/server.crt',
+			'local_pk' => '/path/to/server.key',
+			'allow_self_signed' => TRUE, // allow self signed certs, should be false in production
+			'verify_peer' => FALSE
+		]);
+		
+		$secure_websockets_server = new \Ratchet\Server\IoServer($app, $secure_websockets, $loop);
 
-		//If you want to use timer
-		if ($this->timer != false) {
-			$server->loop->addPeriodicTimer($this->timer_interval, function () {
-				if (!empty($this->callback['citimer'])) {
-					call_user_func_array($this->callback['citimer'], array(date('d-m-Y h:i:s a', time())));
-				}
-			});
-
-		}
-
-		// Run the socket connection !
-		$server->run();
+		$secure_websockets_server->run();
 	}
 
 	/**
