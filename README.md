@@ -1,6 +1,10 @@
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Total Downloads][ico-downloads]][link-downloads]
 
+<a href="https://www.buymeacoffee.com/takielias" target="_blank">
+<img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" >
+</a>
+
 # CodeIgniter WebSocket Library
 CodeIgniter WebSocket library. It allows you to make powerfull realtime applications by using Ratchet ([Socketo.me](http://socketo.me) & [ratchet_client](https://github.com/romainrg/ratchet_client)) Websocket technology.
 
@@ -121,10 +125,12 @@ class Welcome extends CI_Controller
 ## Bugs :bug: or feature :muscle:
 Be free to open an issue or send pull request
 
-## Support on Beerpay
-Hey dude! Help me out for a couple of :beers:!
+## Support on Buy Me A Coffee
+Hey dude! Help me out for a cup of ☕!
 
-[![Beerpay](https://beerpay.io/takielias/codeigniter-websocket/badge.svg?style=beer-square)](https://beerpay.io/takielias/codeigniter-websocket)  [![Beerpay](https://beerpay.io/takielias/codeigniter-websocket/make-wish.svg?style=flat-square)](https://beerpay.io/takielias/codeigniter-websocket?focus=wish)
+<a href="https://www.buymeacoffee.com/takielias" target="_blank">
+<img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" >
+</a>
 
 [ico-version]: https://img.shields.io/packagist/v/takielias/codeigniter-websocket.svg?style=flat-square
 [ico-downloads]: https://img.shields.io/packagist/dt/takielias/codeigniter-websocket.svg?style=flat-square
