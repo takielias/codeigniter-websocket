@@ -122,6 +122,50 @@ class Welcome extends CI_Controller
  - **Auth** type callback is called at first message posted from client.
  - **Event** type callback is called on every message posted.
 
+# How to receive response into Codeigniter Controller ?
+
+Please look at the Welcome.php controller.
+
+	public function index()
+	{
+		// Load package path
+		$this->load->add_package_path(FCPATH . 'vendor/takielias/codeigniter-websocket');
+		$this->load->library('Codeigniter_websocket');
+		$this->load->remove_package_path(FCPATH . 'vendor/takielias/codeigniter-websocket');
+
+		// Run server
+		$this->codeigniter_websocket->set_callback('auth', array($this, '_auth'));
+		$this->codeigniter_websocket->set_callback('event', array($this, '_event'));
+		$this->codeigniter_websocket->set_callback('roomleave', array($this, '_roomleave'));
+		$this->codeigniter_websocket->run();
+	}
+
+	public function _roomleave($data = null)
+	{
+		// Here you will receive data from the frontend roomleave event trigger.
+		echo 'Hey ! I\'m a room leave EVENT callback' . PHP_EOL;
+	}
+The main concept is the callback function.
+
+You would receive the response into the defined function. You can trigger the event from the front end like below using jQuery
+
+        socket.send(JSON.stringify({
+            'type': 'roomleave',
+            'room_name': targetName,
+            'user_id': "buzz4rd"
+        }));
+
+It would trigger the function below
+
+
+	public function _roomleave($data = null)
+	{
+		// Here you will receive data from fron tend roomleave event trigger.
+		echo 'Hey ! I\'m a room leave EVENT callback' . PHP_EOL;
+	}
+
+You May Check [Room Chat using PHP websocket](https://github.com/takielias/ci-socket-chat). It was built using [this](https://github.com/romainrg/ratchet_client)
+
 ## Bugs :bug: or feature :muscle:
 Be free to open an issue or send pull request
 
