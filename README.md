@@ -1,9 +1,9 @@
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Total Downloads][ico-downloads]][link-downloads]
 
-<a href="https://www.buymeacoffee.com/takielias" target="_blank">
-<img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" >
+<a href="https://www.buymeacoffee.com/takielias" target="_blank"> <img align="left" src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" height="50" width="210" alt="takielias" /></a>
 </a>
+<br><br>
 
 # CodeIgniter WebSocket Library
 CodeIgniter WebSocket library. It allows you to make powerfull realtime applications by using Ratchet ([Socketo.me](http://socketo.me) & [ratchet_client](https://github.com/romainrg/ratchet_client)) Websocket technology.
@@ -172,9 +172,9 @@ Be free to open an issue or send pull request
 ## Support on Buy Me A Coffee
 Hey dude! Help me out for a cup of ☕!
 
-<a href="https://www.buymeacoffee.com/takielias" target="_blank">
-<img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" >
+<a href="https://www.buymeacoffee.com/takielias" target="_blank"> <img align="left" src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" height="50" width="210" alt="takielias" /></a>
 </a>
+<br><br>
 
 [ico-version]: https://img.shields.io/packagist/v/takielias/codeigniter-websocket.svg?style=flat-square
 [ico-downloads]: https://img.shields.io/packagist/dt/takielias/codeigniter-websocket.svg?style=flat-square
